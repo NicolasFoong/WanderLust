@@ -6,3 +6,37 @@ body {
     margin: 0px;
     padding: 0px;
 }
+
+/* Custom styles for the header */
+header {
+        background-color: #8e6e53; /* Change the background color */
+        padding: 10px 0; /* Add padding for better spacing */
+    }
+    
+    .navbar {
+        border-radius: 0; /* Remove the rounded corners */
+    }
+    
+    .navbar-brand {
+        color: #black; /* Change the brand/logo text color */
+        font-size: 24px; /* Adjust the brand/logo font size */
+    }
+    
+    .navbar-nav .nav-link {
+        color: black; /* Change the navigation link text color */
+    }
+    
+    .navbar-nav .nav-link:hover {
+        color: #a68a64; /* Change the navigation link text color on hover */
+    }
+    
+    .btn-primary {
+        background-color: #6d597a; /* Change the primary button background color */
+        border-color: #6d597a; /* Change the primary button border color */
+    }
+    
+    .btn-primary:hover {
+        background-color: #6d597a; /* Change the primary button background color on hover */
+        border-color: #6d597a; /* Change the primary button border color on hover */
+    }
+    
