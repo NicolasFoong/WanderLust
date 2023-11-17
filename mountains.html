@@ -11,7 +11,6 @@
   <title>Home Page</title>
 </head>
 
-<body>
  <!-- Header Section -->
 <header>
   <nav class="navbar navbar-expand-lg rounded" aria-label="Header space">
@@ -29,15 +28,11 @@
               <!-- Navbar Links -->
               <ul class="navbar-nav col-lg-6 justify-content-lg-center">
                   <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
                       <a class="nav-link" href="/index.html">Sign Up</a>
                   </li>
                   <li class="nav-item dropdown">
                       <!-- Dropdown Toggle -->
                       <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Discover</a>
-                      <!-- Dropdown Maps & National Parks -->
                       <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="/nationalpark.html">National Parks</a></li>
                           <li><hr class="dropdown-divider"></li>
@@ -55,7 +50,29 @@
   </nav>
 </header>
     <!-- Content Section -->
-    <h1>MOUNTAINS</h1>
+    <main>
+      <div class="container text-center position-relative">
+        <!-- Add your image here -->
+        <div class="mountain-container">
+          <img src="/images/mountain/Mountain.jpeg" alt="Your Image" class="img-fluid">
+          <!-- Add Search Functionality + Button -->
+          <div class="overlay-container">
+            <div class="mountain-content">
+              <h2>Opt for a Summit</h2>
+              <select id="mountain" class="form-select">
+                <option>Mountains</option>
+              </select>
+              <button id="submitBtn" class="styleBtn btn btn-primary" onclick="searchMountains()">Search</button>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Display search results here -->
+        <div id="mountains" class="search-results"></div>
+      </div>
+    </main>
+    
+    
 
 <!-- Footer -->
     <footer class="bg-dark text-center text-white">
@@ -90,7 +107,9 @@
           © 2023 Copyright
       </div>
   </footer>
-  
+  <!-- Included Scripts -->
+  <script src="/scripts/mountainData.js"></script>
+  <script src="/scripts/mountains.js"></script>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>

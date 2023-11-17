@@ -1,46 +1,54 @@
-//  submitButton.addEventListener('click', async () => {
+"use strict";
 
-//  });
+window.onload = () => {
+  addingMountainsToDropdown();
+};
 
-function mountainTemplate(mountain) {
-  //let mySunrise = getSunsetForMountain(`${mountain.coords.lat},${mountain.coords.lng}`);
+function addingMountainsToDropdown() {
+  const mountains = document.getElementById("mountain");
+  mountainsArray.forEach(function (mountain) {
+    // create mountain option for dropdown id
+    let option = document.createElement("option");
+    // set option value to the new element by ID
+    option.value = mountain.name;
+    option.textContent = mountain.name;
 
-  return `
-    <div class="mountain">
-    <img class="mountain-photo" src="images/${mountain.img}">
-    <h2 class="mountain-name">${mountain.name} <span class="species">(${mountain.elevation} feet)</span></h2>
-    <h4 class="mountain-desc">${mountain.desc} </h4>
-    <p><strong>Effort:</strong> ${mountain.effort}</p>
-    <strong>Coordinates:</strong> lat: ${mountain.coords.lat} lng: ${mountain.coords.lng}
-    <strong>Sunrise:</strong> ${mySunrise}
-    </div>
+    mountains.appendChild(option);
+  });
+}
+
+const submitButton = document.getElementById("submitBtn");
+submitButton.addEventListener("click", mountainTemplate);
+
+function mountainTemplate() {
+  const grabMountain = document.getElementById("mountain").value;
+  const mountainData = mountainsArray.find((mountain) => mountain.name === grabMountain);
+
+  // Check if a mountain is found
+  if (mountainData) {
+    // Destructure the mountainData object for easier access
+    const { name, elevation, effort, img, desc, coords } = mountainData;
+
+    // Create the HTML for the card body
+    let message = `
+      <div class="container text-center">
+        <div class="card mx-auto">
+          <div class="card-body">
+            <img class="mountain-photo" src="images/${img}" alt="${name} Image">
+            <h2 class="mountain-name">${name} <span class="species">(${elevation} feet)</span></h2>
+            <h4 class="mountain-desc">${desc}</h4>
+            <p><strong>Effort:</strong> ${effort}</p>
+            <!-- Add any additional information you want to display -->
+            <p><strong>Coordinates:</strong> Lat: ${coords.lat}, Lng: ${coords.lng}</p>
+          </div>
+        </div>
+      </div>
     `;
-}
 
-document.getElementById("mountains").innerHTML = `
-  <h1 class="app-title"> ${mountainsArray.length} Mountains to climb</h1>
-  ${mountainsArray.map(mountainTemplate).join("")}
-  <p class="footer">These ${
-    mountainsArray.length
-  } mountants were added recently. Check back soon for updates.</p>
-`;
-
-async function getSunsetForMountain(lat, lng) {
-  let response = await fetch(
-    `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`
-  );
-  let data = await response.json();
-  return data;
-}
-
-function loadData() {
-  var down = document.getElementById("mountain");
-  for (let i = 0; i < mountainsArray.length; i++) {
-    var optn = mountainsArray[i];
-    var el = document.createElement("option");
-    el.textContent = optn;
-    el.value = optn;
-    down.appendChild(el);
+    // Display the card in the HTML page
+    document.getElementById("mountains").innerHTML = message;
+  } else {
+    // Handle the case when the selected mountain is not found
+    console.error("Mountain not found");
   }
-  down.innerHTML = "Elements Added";
 }
