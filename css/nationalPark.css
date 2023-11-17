@@ -6,3 +6,13 @@
   transform: translate(-50%, -50%);
   z-index: 1;
 }
+
+    .park-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .park-container .card {
+      max-width: 300px; /* Set a maximum width for each park container */
+    }
