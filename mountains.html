@@ -1,118 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Bootstrap CSS v5.3.2 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <!-- Customs CSS -->
-  <link rel="stylesheet" href="/css/style.css">
-  <script src="css/mountain.css"></script>
-  <!-- Title Page -->
-  <title>Home Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS v5.3.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Customs CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="css/mountain.css"></script>
+    <!-- Title Page -->
+    <title>Home Page</title>
 </head>
 
- <!-- Header Section -->
-<header>
-  <nav class="navbar navbar-expand-lg rounded" aria-label="Header space">
-      <div class="container-fluid">
-          <!-- Navbar Toggler Button -->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#HeaderSpace" aria-controls="HeaderSpace" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar navbar-expand-lg rounded" aria-label="Header space">
+            <div class="container-fluid">
+                <!-- Navbar Toggler Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#HeaderSpace"
+                    aria-controls="HeaderSpace" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-          <!-- Navbar Content -->
-          <div class="collapse navbar-collapse d-lg-flex" id="HeaderSpace">
-              <!-- Navbar NAME -->
-              <a class="navbar-brand col-lg-3 me-0" href="/index.html">WanderLust</a>
+                <!-- Navbar Content -->
+                <div class="collapse navbar-collapse d-lg-flex" id="HeaderSpace">
+                    <!-- Navbar NAME -->
+                    <a class="navbar-brand col-lg-3 me-0" href="/index.html">WanderLust</a>
 
-              <!-- Navbar Links -->
-              <ul class="navbar-nav col-lg-6 justify-content-lg-center">
-                  <li class="nav-item">
-                      <a class="nav-link" href="/index.html">Sign Up</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                      <!-- Dropdown Toggle -->
-                      <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Discover</a>
-                      <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="/nationalpark.html">National Parks</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="/mountains.html">Mountains</a></li>
-                      </ul>
-                  </li>
-              </ul>
+                    <!-- Navbar Links -->
+                    <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Sign Up</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <!-- Dropdown Toggle -->
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                aria-expanded="false">Discover</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/nationalpark.html">National Parks</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="/mountains.html">Mountains</a></li>
+                            </ul>
+                        </li>
+                    </ul>
 
-              <!-- Link to new site -->
-              <div class="d-lg-flex col-lg-3 justify-content-lg-end">
-                  <a class="btn btn-primary" href="https://www.nationalparkreservations.com/" target="_blank">Set up your exploration</a>
-              </div>
-          </div>
-      </div>
-  </nav>
-</header>
+                    <!-- Link to a new site -->
+                    <div class="d-lg-flex col-lg-3 justify-content-lg-end">
+                        <a class="btn btn-primary"
+                            href="https://www.nationalparkreservations.com/" target="_blank">Set up your
+                            exploration</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
     <!-- Content Section -->
     <main>
         <div class="container text-center position-relative">
             <!-- Add your image here -->
             <div class="mountain-container">
                 <h2>Opt for a Summit</h2>
-              <img src="/images/mountain/Mountain.jpeg" alt="Mountain Background" class="img-fluid">
-              <!-- Add Search Functionality + Button -->
-              <div class="overlay-container container">
-                <div class="mountain-content">
-                  <select id="mountain" class="form-select">
-                    <option>Mountains</option>
-                  </select>
-                  <button id="submitBtn" class="styleBtn btn btn-primary" onclick="searchMountains()">Search</button>
+                <img src="/images/mountain/Mountain.jpeg" alt="Mountain Background" class="img-fluid">
+                <!-- Add Search Functionality + Button -->
+                <div class="overlay-container container">
+                    <div class="mountain-content">
+                        <select id="mountain" class="form-select">
+                            <option>Mountains</option>
+                        </select>
+                        <button id="submitBtn" class="styleBtn btn btn-primary"
+                            onclick="searchMountains()">Search</button>
+                    </div>
                 </div>
-              </div>
             </div>
-          
+
             <!-- Display search results here -->
             <div id="mountains" class="search-results"></div>
-          </div>
+        </div>
     </main>
-    
-    
 
-<!-- Footer -->
+    <!-- Footer -->
     <footer class="bg-dark text-center text-white">
-      <div class="container p-4 pb-0">
-          <section>
-              <form action="">
-                  <div class="row d-flex justify-content-center">
-                      <div class="col-auto">
-                          <p class="pt-2">
-                              <strong>Sign up for our newsletter</strong>
-                          </p>
-                      </div>
-  
-                      <div class="col-md-5 col-12">
-                          <div class="form-outline form-white mb-4">
-                              <input type="email" id="form5Example29" class="form-control" />
-                              <label class="form-label" for="form5Example29">Email address</label>
-                          </div>
-                      </div>
-  
-                      <div class="col-auto">
-                          <button type="submit" class="btn btn-outline-light mb-4">
-                              Subscribe
-                          </button>
-                      </div>
-                  </div>
-              </form>
-          </section>
-      </div>
-  
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-          © 2023 Copyright
-      </div>
-  </footer>
-  <!-- Included Scripts -->
-  <script src="/scripts/mountainData.js"></script>
-  <script src="/scripts/mountains.js"></script>
-  <!-- Bootstrap JavaScript Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  </body>
-  </html>
-  
+        <div class="container p-4 pb-0">
+            <section>
+                <form action="">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-auto">
+                            <p class="pt-2">
+                                <strong>Sign up for our newsletter</strong>
+                            </p>
+                        </div>
+
+                        <div class="col-md-5 col-12">
+                            <div class="form-outline form-white mb-4">
+                                <input type="email" id="form5Example29" class="form-control" />
+                                <label class="form-label" for="form5Example29">Email address</label>
+                            </div>
+                        </div>
+
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-outline-light mb-4">Subscribe</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright
+        </div>
+    </footer>
+    <!-- Included Scripts -->
+    <script src="/scripts/mountainData.js"></script>
+    <script src="/scripts/mountains.js"></script>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C
