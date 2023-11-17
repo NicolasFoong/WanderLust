@@ -52,25 +52,25 @@
 </header>
     <!-- Content Section -->
     <main>
-      <div class="container text-center position-relative">
-        <!-- Add your image here -->
-        <div class="mountain-container">
-          <img src="/images/mountain/Mountain.jpeg" alt="Your Image" class="img-fluid">
-          <!-- Add Search Functionality + Button -->
-          <div class="overlay-container">
-            <div class="mountain-content">
-              <h2>Opt for a Summit</h2>
-              <select id="mountain" class="form-select">
-                <option>Mountains</option>
-              </select>
-              <button id="submitBtn" class="styleBtn btn btn-primary" onclick="searchMountains()">Search</button>
+        <div class="container text-center position-relative">
+            <!-- Add your image here -->
+            <div class="mountain-container">
+                <h2>Opt for a Summit</h2>
+              <img src="/images/mountain/Mountain.jpeg" alt="Mountain Background" class="img-fluid">
+              <!-- Add Search Functionality + Button -->
+              <div class="overlay-container container">
+                <div class="mountain-content">
+                  <select id="mountain" class="form-select">
+                    <option>Mountains</option>
+                  </select>
+                  <button id="submitBtn" class="styleBtn btn btn-primary" onclick="searchMountains()">Search</button>
+                </div>
+              </div>
             </div>
+          
+            <!-- Display search results here -->
+            <div id="mountains" class="search-results"></div>
           </div>
-        </div>
-    
-        <!-- Display search results here -->
-        <div id="mountains" class="search-results"></div>
-      </div>
     </main>
     
     
