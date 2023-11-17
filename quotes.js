@@ -5,9 +5,6 @@ const natureQuotes = [
   "Let's find some beautiful place to get lost in.",
   "In the forest, I find peace and a lot of bugs.",
   "Life is better with a little dirt on your hands.",
-  "Nature is my favorite artist, and the mountains are its masterpiece.",
-  "Keep close to nature's heart and break clear away, once in a while, and climb a mountain or spend a week in the woods. Wash your spirit clean. - John Muir",
-  "Climbing mountains not only gets you to the top but also closer to the clouds.",
   "Nature doesn't hurry, yet everything is accomplished, unlike me on Monday mornings.",
   "Let's wander where the WiFi is weak."
 ];
