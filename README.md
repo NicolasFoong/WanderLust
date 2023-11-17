@@ -68,6 +68,7 @@ Here is a sample image screenshot of the website:
 * https://youtube.com/playlist?list=PL46F0A159EC02DF82&si=H5wLppACvmjwcXn2
 * https://readme.so/editor
 * https://webresizer.com
+* https://www.nationalparks.org/explore/parks
 
 # Authors: 
   ** Nicolas Foong **
