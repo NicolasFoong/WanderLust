@@ -52,9 +52,9 @@ Here is a sample image screenshot of the website:
 **Index**
 ![Index](![Alt text](</screenshots/WanderLustHome.png>))
 **Mountains**
-![Products](![Alt text](</screenshots/MountainsSummit.png>))
+![Products](![Alt text](</screenshots/Mountain.Image.png>))
 **NationalPark**
-![Login](![Alt text](</screenshots/FindaPark.png>))
+![Login](![Alt text](</screenshots/ParkImage.png>))
 
 ## Acknowledgments
 
