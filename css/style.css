@@ -40,3 +40,16 @@ header {
         border-color: #6d597a; /* Change the primary button border color on hover */
     }
     
+/* Adjust the Carousel images so they fit  */
+    .carousel-inner {
+        height: 700px; /* Set a fixed height for the carousel container */
+    }
+    
+
+    .carousel-caption-container {
+        height: 100%; /* Take up the full height of the carousel item */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
