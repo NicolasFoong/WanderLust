@@ -1,53 +1,141 @@
 "use strict";
 
-window.onload = () => {
-  //
+document.addEventListener("DOMContentLoaded", () => {
   const states = document.getElementById("states");
   const parktype = document.getElementById("parktype");
+
+  const stateForm = document.getElementById("stateForm");
+  stateForm.onchange = filterStates;
+
+  const parkType = document.getElementById("parkType");
+  parkType.onchange = filterStates;
+
   addLocationsToDropdown();
   addNationalParksToDropdown();
-};
+});
 
 function addLocationsToDropdown() {
-  // Get the dropdown element by its ID
+  const statesList = document.getElementById("statesList");
 
-  // Use forEach to iterate over the array
   locationsArray.forEach(function (location) {
-    // Create a new option element
-    let option = document.createElement("option");
-
-    // Set the value and text content for the new option
-    option.value = location;
-    option.textContent = location;
-
-    // Add the new option to the dropdown
-    states.appendChild(option);
+    let option = new Option(location);
+    statesList.appendChild(option);
   });
 }
 
 function addNationalParksToDropdown() {
-  // Get the dropdown element by its ID
+  const parkType = document.getElementById("parkType");
 
-  // Use forEach to iterate over the array
   nationalParksArray.forEach(function (park) {
-    // Create a new option element
-    let option = document.createElement("option");
-
-    // Set the value and text content for the new option
-    option.value = park.LocationName;
-    option.textContent = park.LocationName;
-
-    // Add the new option to the dropdown
-    parktype.appendChild(option);
+    let option = new Option(park.LocationName);
+    parkType.appendChild(option);
   });
 }
-// grab the value of a selected item from the dropdown.
-function searchLocation() {
-  const selectedValue = states.value;
-  alert(selectedValue);
+
+function filterStates() {
+  const state = document.getElementById("statesList").value;
+  const parkType = document.getElementById("parkType").value;
+
+  let filteredStates = nationalParksArray;
+
+  if (state != "Select State") {
+    filteredStates = filteredStates.filter(f => f.State == state);
+  }
+
+  if (parkType != "Select Type") {
+    filteredStates = filteredStates.filter(f => f.LocationName.includes(parkType));
+  }
+
+  displayStates(filteredStates);
 }
 
-// Declaring variables
+function displayStates(filteredStates) {
+  const statesContainer = document.querySelector("#stateName");
+  statesContainer.innerHTML = "";
 
-//Declaring variables
-console.log(locationsArray.length);
+  filteredStates.forEach(state => {
+    displayName(state, statesContainer);
+  });
+}
+
+function displayName(state, parentDiv) {
+  const stateDiv = document.createElement("div");
+  stateDiv.classList.add("card");
+  stateDiv.classList.add("mb-3");
+  parentDiv.appendChild(stateDiv);
+
+  const cardHeader = document.createElement("div");
+  cardHeader.classList.add("card-header");
+  cardHeader.innerText = "Name: " + state.LocationName;
+  stateDiv.appendChild(cardHeader);
+
+  const cardBody = document.createElement("div");
+  cardBody.classList.add("card-body");
+  stateDiv.appendChild(cardBody);
+
+  addAddress(state, cardBody);
+  addCity(state, cardBody);
+  addState(state, cardBody);
+  addZipCode(state, cardBody);
+  addPhone(state, cardBody);
+  addFax(state, cardBody);
+  addLatitude(state, cardBody);
+  addLongitude(state, cardBody);
+}
+
+function addAddress(state, parentDiv) {
+  const parkAddress = document.createElement("p");
+  parkAddress.innerText = "Address: " + state.Address;
+  parentDiv.appendChild(parkAddress);
+}
+
+function addCity(state, parentDiv) {
+  const parkCity = document.createElement("p");
+  parkCity.innerText = "City: " + state.City;
+  parentDiv.appendChild(parkCity);
+}
+
+function addState(state, parentDiv) {
+  const parkState = document.createElement("p");
+  parkState.innerText = "State: " + state.State;
+  parentDiv.appendChild(parkState);
+}
+
+function addZipCode(state, parentDiv) {
+  const parkZipCode = document.createElement("p");
+  parkZipCode.innerText = "Zip Code: " + state.ZipCode;
+  parentDiv.appendChild(parkZipCode);
+}
+
+function addPhone(state, parentDiv) {
+  const parkPhone = document.createElement("p");
+  parkPhone.innerText = "Phone number: " + state.Phone;
+  parentDiv.appendChild(parkPhone);
+}
+
+function addFax(state, parentDiv) {
+  const parkFax = document.createElement("p");
+  parkFax.innerText = "Fax number: " + state.Fax;
+  parentDiv.appendChild(parkFax);
+}
+
+function addLatitude(state, parentDiv) {
+  const parkLatitude = document.createElement("p");
+  parkLatitude.innerText = "Latitude: " + state.Latitude;
+  parentDiv.appendChild(parkLatitude);
+}
+
+function addLongitude(state, parentDiv) {
+  const parkLongitude = document.createElement("p");
+  parkLongitude.innerText = "Longitude: " + state.Longitude;
+  parentDiv.appendChild(parkLongitude);
+}
+
+document.getElementById("searchButton").addEventListener("click", function () {
+  searchLocation();
+});
+
+function searchLocation() {
+  const selectedValue = document.getElementById("states").value;
+  alert(selectedValue);
+}
