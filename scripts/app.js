@@ -1,9 +1,11 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Get dropdown elements
   const states = document.getElementById("states");
   const parktype = document.getElementById("parktype");
 
+  // Get form elements
   const stateForm = document.getElementById("stateForm");
   stateForm.onchange = filterStates;
 
@@ -14,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   addNationalParksToDropdown();
 });
 
+// Function to add locations to the "states" dropdown
 function addLocationsToDropdown() {
   const statesList = document.getElementById("statesList");
 
@@ -23,6 +26,7 @@ function addLocationsToDropdown() {
   });
 }
 
+// Function to add national parks to dropdown
 function addNationalParksToDropdown() {
   const parkType = document.getElementById("parkType");
 
@@ -32,22 +36,27 @@ function addNationalParksToDropdown() {
   });
 }
 
+
 function filterStates() {
   const state = document.getElementById("statesList").value;
   const parkType = document.getElementById("parkType").value;
 
   let filteredStates = nationalParksArray;
 
+
   if (state != "Select State") {
     filteredStates = filteredStates.filter(f => f.State == state);
   }
+
 
   if (parkType != "Select Type") {
     filteredStates = filteredStates.filter(f => f.LocationName.includes(parkType));
   }
 
+  // Display filtered states
   displayStates(filteredStates);
 }
+
 
 function displayStates(filteredStates) {
   const statesContainer = document.querySelector("#stateName");
@@ -58,21 +67,25 @@ function displayStates(filteredStates) {
   });
 }
 
+// Function to create and display state name and details
 function displayName(state, parentDiv) {
   const stateDiv = document.createElement("div");
   stateDiv.classList.add("card");
   stateDiv.classList.add("mb-3");
   parentDiv.appendChild(stateDiv);
 
+  // Display state name in card header
   const cardHeader = document.createElement("div");
   cardHeader.classList.add("card-header");
   cardHeader.innerText = "Name: " + state.LocationName;
   stateDiv.appendChild(cardHeader);
 
+  // Display state details in card body
   const cardBody = document.createElement("div");
   cardBody.classList.add("card-body");
   stateDiv.appendChild(cardBody);
 
+// Additional Info Added
   addAddress(state, cardBody);
   addCity(state, cardBody);
   addState(state, cardBody);
@@ -83,6 +96,7 @@ function displayName(state, parentDiv) {
   addLongitude(state, cardBody);
 }
 
+// Functions to add specific details to the card body
 function addAddress(state, parentDiv) {
   const parkAddress = document.createElement("p");
   parkAddress.innerText = "Address: " + state.Address;

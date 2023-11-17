@@ -26,7 +26,6 @@ function mountainTemplate() {
 
   // Check if a mountain is found
   if (mountainData) {
-    // Destructure the mountainData object for easier access
     const { name, elevation, effort, img, desc, coords } = mountainData;
 
     // Create the HTML for the card body
