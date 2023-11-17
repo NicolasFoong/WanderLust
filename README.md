@@ -50,7 +50,7 @@ generateBtn.addEventListener('click', updateQuoteDisplay);
 ## Sample Screenshot
 Here is a sample image screenshot of the website:
 **Index**
-![Index](![Alt text](</screenshots/WanderLustHome.png))
+![Index](![Alt text](</screenshots/WanderLustHome.png>))
 **Mountains**
 ![Products](![Alt text](</screenshots/MountainsSummit.png>))
 **NationalPark**
