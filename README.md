@@ -23,7 +23,7 @@ A dedicated page allowing one to navigate through various states and see what Na
 ## Sample Screenshot
 Here is a sample image screenshot of the website:
 **Index**
-![Index](![Alt text](</screenshots/FindaPark.png>))
+![Index](![Alt text](<//screenshots/WanderLustHome.png>))
 **Mountains**
 ![Products](![Alt text](</screenshots/MountainsSummit.png>))
 **NationalPark**
