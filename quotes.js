@@ -25,3 +25,5 @@ function updateQuoteDisplay() {
 // Attach the function to the button click event
 const generateBtn = document.getElementById('generateBtn');
 generateBtn.addEventListener('click', updateQuoteDisplay);
+
+

@@ -96,3 +96,11 @@ main {
 .mountain-name {
   font-size: 24px;
 }
+
+/* --------Random Quote Generator-------- */
+#quoteDisplay {
+  color: white;
+}
+.text-white {
+  color: white;
+}
