@@ -61,8 +61,11 @@ Here is a sample image screenshot of the website:
 * Bootstrap v5.3
 * https://coolors.co
 * https://getbootstrap.com/docs/5.3/getting-started/introduction/
+* https://www.w3schools.com/howto/default.asp
 * Pluralsight Professor : Remsey Mailijard
 * Year Up Peers
+* https://www.youtube.com/@WebDevSimplified
+* https://youtube.com/playlist?list=PL46F0A159EC02DF82&si=H5wLppACvmjwcXn2
 * https://readme.so/editor
 * https://webresizer.com
 
